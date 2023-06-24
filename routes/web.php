@@ -15,6 +15,8 @@ use App\Http\Controllers\AgentController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::group(['middleware' => 'prevent-back-history'],function(){
+  
 
 Route::get('/', function () {
     return view('welcome');
@@ -41,6 +43,7 @@ Route::middleware(['auth','role:agent'])->group(function(){
     Route::get('/agent/dashboard', [AgentController::class, 'AgentDashboard'])->name('agent.dashboard');
 
 });// end group agent middleware
+}); //prevent back  middleware
 
 
 
