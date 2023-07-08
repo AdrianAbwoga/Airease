@@ -20,7 +20,7 @@
           </li>
           <li class="nav-item">
             <a href="{{  route('admin.view.user')  }}" class="nav-link">
-              <i class="link-icon" data-feather="box"></i>
+              <i class="link-icon" data-feather="list"></i>
               <span class="link-title">View Users</span>
             </a>
           </li>

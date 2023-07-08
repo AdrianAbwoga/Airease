@@ -13,6 +13,8 @@ class AdminController extends Controller
 
     }//end method
 
+    
+
     public function AdminLogout(Request $request){
         Auth::guard('web')->logout();
 
@@ -66,9 +68,8 @@ class AdminController extends Controller
         return view('admin.admin_viewuser',compact('users'));
 
 
-
-
     }//end method
+ 
 
     public function AdminChangePassword(){
         $id = Auth::user()->id;
@@ -77,6 +78,7 @@ class AdminController extends Controller
         return view('admin.admin_change_password',compact('profileData'));
 
     }
+    
     public function AdminUpdatePassword(Request $request){
 
         //validation
