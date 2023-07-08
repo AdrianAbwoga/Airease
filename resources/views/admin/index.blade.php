@@ -40,7 +40,18 @@
                     </div>
                     <div class="row">
                       <div class="col-6 col-md-12 col-xl-5">
-                        <h3 class="mb-2"><!--code for retrieving number of users--></h3>
+                        <h3 class="mb-2">
+
+                        <?php
+                        $connection = mysqli_connect("localhost","root","","airease");
+                        $query = "SELECT id FROM users WHERE role ='user' ORDER BY id";
+                        $query_run = mysqli_query($connection, $query);
+
+                        $row = mysqli_num_rows($query_run);
+                        echo ''.$row.'';
+                        ?>
+
+                        </h3>
                         <div class="d-flex align-items-baseline">
                           
                         </div>
@@ -70,7 +81,11 @@
                     </div>
                     <div class="row">
                       <div class="col-6 col-md-12 col-xl-5">
-                        <h3 class="mb-2"><!--code for retrieving number of orders--></h3>
+                        <h3 class="mb-2">
+                          
+                        
+                        
+                        <!--code for retrieving number of --></h3>
                         
                       </div>
                      

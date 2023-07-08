@@ -15,6 +15,7 @@
     </thead>
     <tbody>
         @foreach($users as $user)
+        @if($user->role === 'user')
         <tr>
             <td>{{ $user->id }}</td>
             <td>{{ $user->name }}</td>
@@ -22,6 +23,7 @@
             <td>{{ $user->created_at }}</td>
             
         </tr>
+        @endif
         @endforeach
     </tbody>
 </table>

@@ -73,12 +73,7 @@
                         <label for="userPassword" class="form-label">Password</label>
                         <input type="password" class="form-control" id="password" name="password" autocomplete="current-password" placeholder="Password">
                       </div>
-                      <div class="form-check mb-3">
-                        <input type="checkbox" class="form-check-input" id="authCheck">
-                        <label class="form-check-label" for="authCheck">
-                          Remember me
-                        </label>
-                      </div>
+                      
                       <div>
                         
                         <button type="submit" class="btn btn-outline-primary btn-icon-text mb-2 mb-md-0">
@@ -87,7 +82,7 @@
                          
                         </button>
                       </div>
-                      <a href="register.html" class="d-block mt-3 text-muted">Not a user? Sign up</a>
+                      
                     </form>
                   </div>
                 </div>
