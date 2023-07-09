@@ -1,9 +1,16 @@
 @extends('admin.admin_dashboard')
-@section('admin') 
+@section('admin')
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <div class="page-content">
 
-    <h6 class="card-title">USERS INFORMATION</h6>
+<style>
+    .centered-title {
+        text-align: center;
+    }
+</style>
+
+    <h6 class="card-title centered-title">USERS INFORMATION</h6>
     <table class="table">
     <thead>
         <tr>
@@ -11,6 +18,7 @@
             <th>Name</th>
             <th>Email</th>
             <th>Date joined</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -21,6 +29,16 @@
             <td>{{ $user->name }}</td>
             <td>{{ $user->email }}</td>
             <td>{{ $user->created_at }}</td>
+            <td>
+                <a href= "{{ route ('admin.edit.user',['id' => $user->id])}}" type="button" class="btn btn -success">Edit</a>
+                <form method="POST" action="{{ route('admin.user.destroy', ['id' => $user->id]) }}">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn -danger">Delete</button>
+                    </form>
+               
+
+            </td>
             
         </tr>
         @endif

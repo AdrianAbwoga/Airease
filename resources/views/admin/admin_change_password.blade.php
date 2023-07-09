@@ -34,17 +34,7 @@
                   <label class="tx-11 fw-bolder mb-0 text-uppercase">Address:</label>
                   <p class="text-muted">{{ $profileData->address }}</p>
                 </div>
-                <div class="mt-3 d-flex social-links">
-                  <a href="javascript:;" class="btn btn-icon border btn-xs me-2">
-                    <i data-feather="github"></i>
-                  </a>
-                  <a href="javascript:;" class="btn btn-icon border btn-xs me-2">
-                    <i data-feather="twitter"></i>
-                  </a>
-                  <a href="javascript:;" class="btn btn-icon border btn-xs me-2">
-                    <i data-feather="instagram"></i>
-                  </a>
-                </div>
+                
               </div>
             </div>
           </div>

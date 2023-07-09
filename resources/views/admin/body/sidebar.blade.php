@@ -35,7 +35,9 @@
             <div class="collapse" id="emails">
               <ul class="nav sub-menu">
                 <li class="nav-item">
-                  <a href="https://mailtrap.io/inboxes" class="nav-link">Inbox</a>
+                  
+                  <a href="https://mailtrap.io/inboxes" class="nav-link" target="_blank">Inbox</a>
+
                 </li>
               </ul>
             </div>

@@ -114,4 +114,45 @@ class AdminController extends Controller
     
 
     }
+    public function AdminEditUser($id){
+
+        $data = User::find($id);
+
+        
+        return view('admin.admin_edituser',compact('data'));
+
+
+     }//end method
+    public function AdminUserStore(Request $request, $id){
+       
+       $data = User::find($id);
+       $data->username = $request->username;
+       $data->name = $request->name;
+       $data->email = $request->email;
+       $data->phone = $request->phone;
+       $data->address = $request->address;
+       $data->save();
+       $notification = array(
+        'message' => 'Admin Profile Updated Successfully',
+        'alert-type' => 'success'  
+       );
+       
+      
+       return redirect()->back()->with($notification);
+
+    }//end method
+    public function destroy($id)
+{
+    User::destroy($id);
+
+    $notification = [
+        'message' => 'User Deleted Successfully',
+        'alert-type' => 'success'
+    ];
+
+    return redirect()->back()->with($notification);
 }
+    
+}
+
+

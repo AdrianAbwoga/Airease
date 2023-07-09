@@ -52,6 +52,14 @@ Route::middleware(['auth','role:admin'])->group(function(){
 
     Route::get('/admin/view/user', [AdminController::class, 'AdminViewUser'])->name('admin.view.user');
 
+    Route::get('/admin/edit/user{id}', [AdminController::class, 'AdminEditUser'])->name('admin.edit.user');
+
+    Route::post('/admin/user/{id}/store', [AdminController::class, 'AdminUserStore'])->name('admin.user.store');
+
+    Route::delete('/admin/user/{id}', [AdminController::class, 'destroy'])->name('admin.user.destroy');
+
+    
+
    
     
 

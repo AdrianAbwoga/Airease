@@ -74,6 +74,14 @@
                         <input type="password" class="form-control" id="password" name="password" autocomplete="current-password" placeholder="Password">
                       </div>
                       
+                      <div class="mb-3">
+                        <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
+                          {{ __('Login with default UI?') }}
+                         </a>
+
+           
+                        </div>
+                      
                       <div>
                         
                         <button type="submit" class="btn btn-outline-primary btn-icon-text mb-2 mb-md-0">
