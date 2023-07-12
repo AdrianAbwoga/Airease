@@ -13,5 +13,23 @@ Step 2: Install laravel CLI
   Once you have successfully installed composer, open the CLI/command prompt and run the following command:
   ```command line
 composer global require laravel/installer
+```
+step 3: create a laravel project
+once you have installed laravel packages you will be required to create a laravel project named airease
+run the following command:
+```command line
+composer create-project laravel/laravel airease
+```
+step 4: Configure the laravel
+Once you have downloaded the laravel project you will need to change the env. file with the following credentials and create a database with the name : airease
+
+```command line
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=airease
+DB_USERNAME=(your username)/root(if no username)
+DB_PASSWORD=(your password)
+```
 
   
