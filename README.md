@@ -14,13 +14,25 @@ Step 2: Install laravel CLI
   ```command line
 composer global require laravel/installer
 ```
-step 3: create a laravel project
-once you have installed laravel packages you will be required to create a laravel project named airease
-run the following command:
+step 3: clone the repository 
+to clone this repositry select the correct location you want to store this refferably in the C:\xampp\htdocs file route 
+run this code in the console 
 ```command line
-composer create-project laravel/laravel airease
+git clone git@github.com:AdrianAbwoga/Airease.git
 ```
-step 4: Configure the laravel
+Switch to the repo folder
+```
+cd Airease
+```
+install all the necessary dependencies 
+```
+composer install
+```
+Copy all the example env file and make the required configuration changes to the env.file 
+
+the necessarry configurations for potimal functionallity is explained in step 4 
+
+step 4: Configuring the database
 Once you have downloaded the laravel project you will need to change the env. file with the following credentials and create a database with the name : airease
 
 ```command line
@@ -31,5 +43,27 @@ DB_DATABASE=airease
 DB_USERNAME=(your username)/root(if no username)
 DB_PASSWORD=(your password)
 ```
+
+Step 5: Generating the application key
+to generate the key simply run this command in your environment 
+```
+php artisan key:generate
+```
+Step 6: run the database migrations
+simply run the following command to run migrations 
+```
+php artisan migrate
+```
+
+once you are done you can populate the database with the credentials you wish. another option is to seed the information in the seeder implemented to do so run the following command(note this Seeder provides a limit of 15 seeded information)
+```
+php artisan db:seed
+```
+Final: running the code
+to run the code simply run the following command 
+```
+php artisan serve
+```
+
 
   
