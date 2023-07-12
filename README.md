@@ -9,7 +9,9 @@ This project is a semester project that was built to show how to create a airlin
 Step 1: Ensure that you have successfully installed composer 
   you can do this by downloading it in the official composer website:https://getcomposer.org/download/
 
-Step 2:install laravel CLI
+Step 2: Install laravel CLI
   Once you have successfully installed composer, open the CLI/command prompt and run the following command:
-  ```composer global require/installer
+  ```command line
+composer global require laravel/installer
+
   
