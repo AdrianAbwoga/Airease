@@ -64,7 +64,7 @@ to run the code simply run the following command
 ```
 php artisan serve
 ```
-##sample images of how it should appear 
+## sample images of how it should appear 
 
 
 
