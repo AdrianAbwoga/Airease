@@ -77,5 +77,4 @@ php artisan serve
 
 ![Screenshot (127)](https://github.com/AdrianAbwoga/Airease/assets/98470631/391099d1-2f43-45c4-9f5b-09ecaa01b7eb)
 
-
-  
+ 
