@@ -43,7 +43,10 @@ DB_DATABASE=airease
 DB_USERNAME=(your username)/root(if no username)
 DB_PASSWORD=(your password)
 ```
-This laravel application uses mailtrap as a mailing service in the same .env file you will add this in the mail credentials
+This laravel application uses mailtrap as a mailing service(https://mailtrap.io/)
+You will be required to register to use their service which is a simple and fast process.
+once registered they will generate a passowrd and username for you that can be found in the inboxes
+In the same .env file you will add this in the mail credentials
 ```
 MAIL_MAILER=smtp
 MAIL_HOST=sandbox.smtp.mailtrap.io
@@ -51,7 +54,7 @@ MAIL_PORT=2525
 MAIL_USERNAME=(generated username)
 MAIL_PASSWORD=(generated password)
 MAIL_ENCRYPTION=null
-MAIL_FROM_ADDRESS="(your email"
+MAIL_FROM_ADDRESS="(your email)"
 MAIL_FROM_NAME="${APP_NAME}"
 
 ```
