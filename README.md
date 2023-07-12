@@ -66,12 +66,16 @@ php artisan serve
 ```
 ## sample images of how it should appear 
 ### admin login 
-![Screenshot (122)](https://github.com/AdrianAbwoga/Airease/assets/98470631/a5d163d3-9dfa-44bf-9ce4-94f1493a6644)
+
+![Screenshot (129)](https://github.com/AdrianAbwoga/Airease/assets/98470631/ef0a60bd-8430-4d5f-8723-8e80a9f922b2)
+
 ### User Login
-![Screenshot (125)](https://github.com/AdrianAbwoga/Airease/assets/98470631/598d343f-c24b-48d9-b31e-3c55967e2b1f)
+
+![Screenshot (128)](https://github.com/AdrianAbwoga/Airease/assets/98470631/bc864513-bb74-4c49-8208-bf91b81186ca)
 
 ### User Register
-![Screenshot (126)](https://github.com/AdrianAbwoga/Airease/assets/98470631/9adb61b6-52a1-4635-ae4b-0c46c8d02668)
+
+![Screenshot (127)](https://github.com/AdrianAbwoga/Airease/assets/98470631/391099d1-2f43-45c4-9f5b-09ecaa01b7eb)
 
 
   
