@@ -43,6 +43,18 @@ DB_DATABASE=airease
 DB_USERNAME=(your username)/root(if no username)
 DB_PASSWORD=(your password)
 ```
+This laravel application uses mailtrap as a mailing service in the same .env file you will add this in the mail credentials
+```
+MAIL_MAILER=smtp
+MAIL_HOST=sandbox.smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=(generated username)
+MAIL_PASSWORD=(generated password)
+MAIL_ENCRYPTION=null
+MAIL_FROM_ADDRESS="(your email"
+MAIL_FROM_NAME="${APP_NAME}"
+
+```
 
 Step 5: Generating the application key
 to generate the key simply run this command in your environment 
