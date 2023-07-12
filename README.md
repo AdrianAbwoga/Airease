@@ -65,7 +65,13 @@ to run the code simply run the following command
 php artisan serve
 ```
 ## sample images of how it should appear 
+### admin login 
+![Screenshot (122)](https://github.com/AdrianAbwoga/Airease/assets/98470631/a5d163d3-9dfa-44bf-9ce4-94f1493a6644)
+### User Login
+![Screenshot (125)](https://github.com/AdrianAbwoga/Airease/assets/98470631/598d343f-c24b-48d9-b31e-3c55967e2b1f)
 
+### User Register
+![Screenshot (126)](https://github.com/AdrianAbwoga/Airease/assets/98470631/9adb61b6-52a1-4635-ae4b-0c46c8d02668)
 
 
   
