@@ -1,66 +1,80 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Airease
+## An intergrated ticket booking system that allows you to find cheaper flights to the destinations that you desire 
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This project is a semester project that was built to show how to create a airline simple airline system in laravel. every part of this project is sample of code that shows you how to do the following 
+* Import the project from the github repository and successfully run it into your device
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## How to install this AIREASE laravel project onto your device 
+Step 1: Ensure that you have successfully installed composer 
+  you can do this by downloading it in the official composer website:https://getcomposer.org/download/
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Step 2: Install laravel CLI
+  Once you have successfully installed composer, open the CLI/command prompt and run the following command:
+  ```command line
+composer global require laravel/installer
+```
+step 3: clone the repository 
+to clone this repositry select the correct location you want to store this refferably in the C:\xampp\htdocs file route 
+run this code in the console 
+```command line
+git clone git@github.com:AdrianAbwoga/Airease.git
+```
+Switch to the repo folder
+```
+cd Airease
+```
+install all the necessary dependencies 
+```
+composer install
+```
+Copy all the example env file and make the required configuration changes to the env.file 
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+the necessarry configurations for potimal functionallity is explained in step 4 
 
-## Learning Laravel
+step 4: Configuring the database
+Once you have downloaded the laravel project you will need to change the env. file with the following credentials and create a database with the name : airease
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+```command line
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=airease
+DB_USERNAME=(your username)/root(if no username)
+DB_PASSWORD=(your password)
+```
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Step 5: Generating the application key
+to generate the key simply run this command in your environment 
+```
+php artisan key:generate
+```
+Step 6: run the database migrations
+simply run the following command to run migrations 
+```
+php artisan migrate
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+once you are done you can populate the database with the credentials you wish. another option is to seed the information in the seeder implemented to do so run the following command(note this Seeder provides a limit of 15 seeded information)
+```
+php artisan db:seed
+```
+Final: running the code
+to run the code simply run the following command 
+```
+php artisan serve
+```
+## sample images of how it should appear 
+### admin login 
 
-## Laravel Sponsors
+![Screenshot (129)](https://github.com/AdrianAbwoga/Airease/assets/98470631/ef0a60bd-8430-4d5f-8723-8e80a9f922b2)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### User Login
 
-### Premium Partners
+![Screenshot (128)](https://github.com/AdrianAbwoga/Airease/assets/98470631/bc864513-bb74-4c49-8208-bf91b81186ca)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+### User Register
 
-## Contributing
+![Screenshot (127)](https://github.com/AdrianAbwoga/Airease/assets/98470631/391099d1-2f43-45c4-9f5b-09ecaa01b7eb)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+ 
