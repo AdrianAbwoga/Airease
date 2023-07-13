@@ -1,4 +1,4 @@
-# Airease
+# airease
 ## An intergrated ticket booking system that allows you to find cheaper flights to the destinations that you desire 
 
 This project is a semester project that was built to show how to create a airline simple airline system in laravel. every part of this project is sample of code that shows you how to do the following 
