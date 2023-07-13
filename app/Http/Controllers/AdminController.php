@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use App\Models\Flight;
 class AdminController extends Controller
 {
     public function AdminDashboard(){
@@ -69,6 +70,13 @@ class AdminController extends Controller
 
 
     }//end method
+    public function AdminViewFlight(){
+        $flights = Flight::all();
+        return view('admin.admin_viewflight',compact('flights'));
+
+
+    }//end method
+ 
  
 
     public function AdminChangePassword(){
@@ -142,7 +150,7 @@ class AdminController extends Controller
 
     }//end method
     public function destroy($id)
-{
+    {
     User::destroy($id);
 
     $notification = [
@@ -151,7 +159,7 @@ class AdminController extends Controller
     ];
 
     return redirect()->back()->with($notification);
-}
+    }
     
 }
 

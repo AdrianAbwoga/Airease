@@ -1,0 +1,72 @@
+form {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1000px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(242, 237, 237);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+  
+  label {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  
+  select {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  input[type="text"],
+  input[type="date"],
+  input[type="number"] {
+    flex: 1;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    max-width: calc(33.33% - 10px);
+  }
+  
+  button {
+    flex: 1;
+    margin-top: 5px;
+    padding: 16px;
+    background-color: #9a0e0e;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  .flight-details {
+    margin-top: 20px;
+}
+
+.flight {
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.flight h3 {
+    margin-top: 0;
+}
+
+.flight p {
+    margin: 0;
+}

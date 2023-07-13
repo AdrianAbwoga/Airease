@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgentController;
+use App\Http\Controllers\FlightSearchController;
 use App\Models\User;
 
 /*
@@ -17,7 +18,11 @@ use App\Models\User;
 |
 */
 Route::group(['middleware' => 'prevent-back-history'],function(){
-  
+
+Route::match(['get', 'post'], '/search', [FlightSearchController::class, 'processSearchForm'])->name('processSearchForm');
+
+Route::get('/results', [FlightController::class, 'showResults'])->name('results');
+Route::get('/apisearch',[FlightController::class. 'apiSearch'])->name('apiSearch');
 
 Route::get('/', function () {
     return view('welcome');
@@ -58,6 +63,8 @@ Route::middleware(['auth','role:admin'])->group(function(){
 
     Route::delete('/admin/user/{id}', [AdminController::class, 'destroy'])->name('admin.user.destroy');
 
+    Route::get('/admin/view/flight', [AdminController::class, 'AdminViewFlight'])->name('admin.view.flight');
+
     
 
    
@@ -65,11 +72,7 @@ Route::middleware(['auth','role:admin'])->group(function(){
 
 });//End group admin middleware
 
-//agent group middleware
-Route::middleware(['auth','role:agent'])->group(function(){
-    Route::get('/agent/dashboard', [AgentController::class, 'AgentDashboard'])->name('agent.dashboard');
 
-});// end group agent middleware
 
 Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
 }); //prevent back  middleware
