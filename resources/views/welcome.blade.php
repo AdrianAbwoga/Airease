@@ -49,14 +49,14 @@
     </a>
 
     <a href="#" class="logo">
-    <img src="{{ asset('images/Untitled-removebg-preview.svg') }}" alt="Airease logo">
+    <img src="{{ asset('logo/mainlogo.png') }}" alt="Airease logo">
       
     </a>
 
     <div class="header-btn-group">
             @if (Route::has('login'))
                     @auth
-                        <a href="{{ url('/dashboard') }}" class="dashboard">Dashboard</a>
+                        <a href="{{ url('/user/dashboard') }}" class="dashboard">Dashboard</a>
                     @else
                         <a href="{{ route('login') }}" class="login">Log in</a>
 
@@ -122,7 +122,7 @@
         </li>
 
         <li>
-          <a href="#poular" class="navbar-link" data-nav-link>Destination</a>
+          <a href="#destination" class="navbar-link" data-nav-link>Destination</a>
         </li>
 
         <li>
@@ -142,7 +142,7 @@
     
     
 
-    <button class="btn btn-primary" onclick="window.location.href='{{ route('search') }}'">Book Now</button>
+    <button class="btn btn-primary" onclick="window.location.href=''">Book Now</button>
 
   </div>
 </div>
@@ -170,7 +170,7 @@
       <div class="btn-group">
         <button class="btn btn-primary">Learn more</button>
 
-        <button class="btn btn-secondary" onclick="window.location.href='{{ url('/api/search') }}'">Book now</button>
+        <button class="btn btn-secondary" onclick="window.location.href=''">Book now</button>
       </div>
 
     </div>

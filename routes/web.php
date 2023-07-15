@@ -3,9 +3,12 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\AgentController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\FlightSearchController;
+use App\Http\Controllers\StripeController;
 use App\Models\User;
+use App\Models\Receipt;
+use App\Models\Order;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +22,7 @@ use App\Models\User;
 */
 Route::group(['middleware' => 'prevent-back-history'],function(){
 
-Route::match(['get', 'post'], '/search', [FlightSearchController::class, 'processSearchForm'])->name('processSearchForm');
+Route::match(['get', 'post'], '/search', [FlightSearchController::class, 'processSearchForm'])->name('search');
 
 Route::get('/results', [FlightController::class, 'showResults'])->name('results');
 Route::get('/apisearch',[FlightController::class. 'apiSearch'])->name('apiSearch');
@@ -40,11 +43,39 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
+Route::middleware(['auth','role:user'])->group(function(){
+
+    Route::get('/user/dashboard', [UserController::class, 'UserDashboard'])->name('user.dashboard');
+
+    Route::get('/user/logout', [UserController::class, 'UserLogout'])->name('user.logout');
+
+    Route::get('/user/profile', [UserController::class, 'Userprofile'])->name('user.profile');
+
+    Route::post('/user/profile/store', [UserController::class, 'UserProfileStore'])->name('user.profile.store');
+
+    Route::get('/user/change/password', [UserController::class, 'UserChangePassword'])->name('user.change.password');
+
+    Route::post('/user/update/password', [UserController::class, 'UserUpdatePassword'])->name('user.update.password');
+
+    Route::get('/user/view/car', [UserController::class, 'UserViewCar'])->name('user.view.car');
+
+    Route::get('/user/edit/car{id}', [UserController::class, 'UserEditCar'])->name('user.edit.car');
+
+    Route::post('/user/store/{id}/order', [UserController::class, 'UserStoreOrder'])->name('user.store.order');
+
+    Route::get('/user/receipt', [UserController::class, 'UserReceipt'])->name('user.receipt');
+
+    Route::delete('/user/order/{order_id}', [UserController::class, 'destroy'])->name('user.order.destroy');
+
+
+});
+
 
 //admin Group Middleware
 Route::middleware(['auth','role:admin'])->group(function(){
-    Route::get('/admin/dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.dashboard');
 
+   Route::get('/admin/dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.dashboard');
+ 
     Route::get('/admin/logout', [AdminController::class, 'AdminLogout'])->name('admin.logout');
 
     Route::get('/admin/profile', [AdminController::class, 'Adminprofile'])->name('admin.profile');
@@ -74,7 +105,15 @@ Route::middleware(['auth','role:admin'])->group(function(){
 
 
 
+
+
 Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
+Route::post('/session', 'App\Http\Controllers\StripeController@session')->name('session');
+
+Route::get('/user/paid', [UserController::class, 'UserPaid'])->name('user.paid');
+Route::get('/user/receipt', [StripeController::class, 'UserReceipt'])->name('user.user_receipt');
+Route::post('/user/paid', [StripeController::class, 'UserPaid'])->name('user.user_paid');
+
 }); //prevent back  middleware
 
 

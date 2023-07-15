@@ -6,7 +6,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
-use App\Models\Flight;
+use App\Models\Car;
+use App\Models\Order;
+use App\Models\OrderPaid;
+use App\Models\Receipt;
+
 class AdminController extends Controller
 {
     public function AdminDashboard(){
@@ -141,7 +145,7 @@ class AdminController extends Controller
        $data->address = $request->address;
        $data->save();
        $notification = array(
-        'message' => 'Admin Profile Updated Successfully',
+        'message' => 'User Profile Updated Successfully',
         'alert-type' => 'success'  
        );
        
