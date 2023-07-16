@@ -10,8 +10,15 @@
     }
 </style>
 
-    <h6 class="card-title centered-title">CARS INFORMATION</h6>
-    <table class="table">
+<h6 class="card-title centered-title">CARS INFORMATION</h6>
+
+<!-- Search Bar -->
+<div class="mb-3">
+    <label for="search-brand" class="form-label">Search by Brand:</label>
+    <input type="text" class="form-control" id="search-brand" placeholder="Enter Brand">
+</div>
+
+<table class="table">
     <thead>
         <tr>
             <th>ID</th>
@@ -34,23 +41,30 @@
             <td>{{ $car->year }}</td>
             <td>{{ $car->model }}</td>
             <td>
-                <a href= "{{ route ('admin.edit.car',['id' => $car->id])}}" type="button" class="btn btn -success">Edit</a>
+                <a href="{{ route('admin.edit.car', ['id' => $car->id]) }}" type="button" class="btn btn- success">Edit</a>
                 <form method="POST" action="{{ route('admin.car.destroy', ['id' => $car->id]) }}">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn -danger">Delete</button>
-                    </form>
-               
-
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn- danger">Delete</button>
+                </form>
             </td>
-            
-            
         </tr>
         
         @endforeach
     </tbody>
 </table>
 
+</div>
 
-			</div>
+<script>
+    $(document).ready(function() {
+        $('#search-brand').on('keyup', function() {
+            var value = $(this).val().toLowerCase();
+            $('tbody tr').filter(function() {
+                $(this).toggle($(this).children('td:nth-child(2)').text().toLowerCase().indexOf(value) > -1);
+            });
+        });
+    });
+</script>
+
 @endsection

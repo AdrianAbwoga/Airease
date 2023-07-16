@@ -10,8 +10,15 @@
     }
 </style>
 
-    <h6 class="card-title centered-title">USERS INFORMATION</h6>
-    <table class="table">
+<h6 class="card-title centered-title">USERS INFORMATION</h6>
+
+<!-- Search Bar -->
+<div class="mb-3">
+    <label for="search-id" class="form-label">Search by ID:</label>
+    <input type="text" class="form-control" id="search-id" placeholder="Enter ID">
+</div>
+
+<table class="table">
     <thead>
         <tr>
             <th>ID</th>
@@ -30,22 +37,30 @@
             <td>{{ $user->email }}</td>
             <td>{{ $user->created_at }}</td>
             <td>
-                <a href= "{{ route ('admin.edit.user',['id' => $user->id])}}" type="button" class="btn btn -success">Edit</a>
+                <a href="{{ route('admin.edit.user', ['id' => $user->id]) }}" type="button" class="btn btn- success">Edit</a>
                 <form method="POST" action="{{ route('admin.user.destroy', ['id' => $user->id]) }}">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn -danger">Delete</button>
-                    </form>
-               
-
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn- danger">Delete</button>
+                </form>
             </td>
-            
         </tr>
         @endif
         @endforeach
     </tbody>
 </table>
 
+</div>
 
-			</div>
+<script>
+    $(document).ready(function() {
+        $('#search-id').on('keyup', function() {
+            var value = $(this).val().toLowerCase();
+            $('tbody tr').filter(function() {
+                $(this).toggle($(this).children('td:first').text().toLowerCase().indexOf(value) > -1);
+            });
+        });
+    });
+</script>
+
 @endsection
