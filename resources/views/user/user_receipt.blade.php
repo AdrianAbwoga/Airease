@@ -1,8 +1,14 @@
 @extends('user.user_dashboard')
 @section('user')
 <div class="page-content">
-    @foreach($orders as $order)
-    <div class="card-body">
+    @if($orders->isEmpty())
+    <div class="empty-cart">
+            <i data-feather="x-circle"></i>
+            <p>Cart empty.</p>
+        </div>
+    @else
+        @foreach($orders as $order)
+        <div class="card-body">
         <div class="container-fluid d-flex justify-content-between">
             <div class="col-lg-3 ps-0">
                 <a href="#" class="noble-ui-logo logo-light d-block mt-3">Air<span>Ease</span></a>                 
@@ -17,8 +23,17 @@
                 <p class="text-end mb-1">Balance Due</p>
                 <h4 class="text-end fw-normal">Ksh{{ $order->total_price }}</h4>
                 <h6 class="mb-0 mt-3 text-end fw-normal mb-2"><span class="text-muted">Ordered Date :</span> {{ $order->created_at }}</h6>
-                <h6 class="mb-0 mt-3 text-end fw-normal mb-2"><span class="text-muted">Pickup Date :</span> {{ $order->pickup_date }}</h6>
-                <h6 class="mb-0 mt-3 text-end fw-normal mb-2"><span class="text-muted">Return Date :</span> {{ $order->drop_off_date }}</h6>
+                @if($order->pickup_date)
+    <h6 class="mb-0 mt-3 text-end fw-normal mb-2">
+        <span class="text-muted">Pickup Date:</span> {{ $order->pickup_date }}
+    </h6>
+@elseif($order->arrival_date)
+    <h6 class="mb-0 mt-3 text-end fw-normal mb-2">
+        <span class="text-muted">Arrival Date:</span> {{ $order->arrival_date }}
+    </h6>
+@endif
+
+                <h6 class="mb-0 mt-3 text-end fw-normal mb-2"><span class="text-muted">End Date :</span> {{ $order->drop_off_date }}</h6>
             </div>
         </div>
         <div class="container-fluid mt-5 d-flex justify-content-center w-100">
@@ -27,7 +42,7 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Brand</th>
+                            <th>Name</th>
                             <th class="text-end">Number of days</th>
                             <th class="text-end">Unit cost</th>
                             <th class="text-end">Total</th>
@@ -36,7 +51,14 @@
                     <tbody>
                         <tr class="text-end">
                             <td class="text-start">1</td>
-                            <td class="text-start">{{ $order->brand }}</td>
+                            <td class="text-start">
+    @if($order->brand)
+        {{ $order->brand }}
+    @elseif($order->hotel_name)
+        {{ $order->hotel_name }}
+    @endif
+</td>
+
                             <td>{{ $order->num_of_days }}</td>
                             <td>Ksh{{ $order->price }}</td>
                             <td>Ksh{{ $order->total_price }}</td>
@@ -65,7 +87,8 @@
         <div class="d-flex justify-content-start">
         <form action="{{ route('session', ['order' => $order->order_id]) }}" method="POST">
         @csrf
-        <input type="hidden" name="brand" value="{{ $order->brand }}">
+        <input type="hidden" name="brand" value="{{ $order->brand ? $order->brand : $order->hotel_name }}">
+
         <input type="hidden" name="num_of_days" value="{{ $order->num_of_days }}">
         <input type="hidden" name="price" value="{{ $order->price }}">
         <input type="hidden" name="total_price" value="{{ $order->total_price }}">
@@ -83,5 +106,6 @@
 
     </div>
     @endforeach
+    @endif
 </div>
 @endsection

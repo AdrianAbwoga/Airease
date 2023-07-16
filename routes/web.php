@@ -9,6 +9,8 @@ use App\Http\Controllers\StripeController;
 use App\Models\User;
 use App\Models\Receipt;
 use App\Models\Order;
+use App\Models\Hotel;
+use App\Models\Car;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,13 +61,18 @@ Route::middleware(['auth','role:user'])->group(function(){
 
     Route::get('/user/view/car', [UserController::class, 'UserViewCar'])->name('user.view.car');
 
-    Route::get('/user/edit/car{id}', [UserController::class, 'UserEditCar'])->name('user.edit.car');
+    Route::get('/user/edit/car/{id}', [UserController::class, 'UserEditCar'])->name('user.edit.car');
 
     Route::post('/user/store/{id}/order', [UserController::class, 'UserStoreOrder'])->name('user.store.order');
 
     Route::get('/user/receipt', [UserController::class, 'UserReceipt'])->name('user.receipt');
 
     Route::delete('/user/order/{order_id}', [UserController::class, 'destroy'])->name('user.order.destroy');
+
+    Route::get('/user/view/hotel', [UserController::class, 'UserViewHotel'])->name('user.view.hotel');
+
+    Route::get('/user/edit/hotel/{id}', [UserController::class, 'UserEditHotel'])->name('user.edit.hotel');
+    
 
 
 });
@@ -93,6 +100,8 @@ Route::middleware(['auth','role:admin'])->group(function(){
     Route::get('/admin/edit/user{id}', [AdminController::class, 'AdminEditUser'])->name('admin.edit.user');
     Route::get('/admin/edit/car{id}', [AdminController::class, 'AdminEditCar'])->name('admin.edit.car');
 
+    Route::get('/admin/edit/hotel{id}', [AdminController::class, 'AdminEditHotel'])->name('admin.edit.hotel');
+
     Route::post('/admin/user/{id}/store', [AdminController::class, 'AdminUserStore'])->name('admin.user.store');
 
     Route::delete('/admin/user/{id}', [AdminController::class, 'destroy'])->name('admin.user.destroy');
@@ -101,9 +110,15 @@ Route::middleware(['auth','role:admin'])->group(function(){
 
     Route::get('/admin/view/order', [AdminController::class, 'AdminViewOrder'])->name('admin.view.order');
 
+    Route::get('/admin/view/hotel', [AdminController::class, 'AdminViewHotel'])->name('admin.view.hotel');
+
     Route::delete('/admin/car/{id}', [AdminController::class, 'destroyCar'])->name('admin.car.destroy');
 
+    Route::delete('/admin/hotel/{id}', [AdminController::class, 'destroyHotel'])->name('admin.hotel.destroy');
+
     Route::post('/admin/car/{id}/store', [AdminController::class, 'AdminCarStore'])->name('admin.car.store');
+
+    Route::post('/admin/hotel/{id}/store', [AdminController::class, 'AdminHotelStore'])->name('admin.hotel.store');
 
     
 

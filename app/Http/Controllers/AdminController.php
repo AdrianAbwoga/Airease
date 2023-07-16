@@ -10,6 +10,7 @@ use App\Models\Car;
 use App\Models\Order;
 use App\Models\OrderPaid;
 use App\Models\Receipt;
+use App\Models\Hotel;
 
 class AdminController extends Controller
 {
@@ -80,6 +81,41 @@ class AdminController extends Controller
 
 
     }//end method
+    public function AdminViewHotel(){
+        $hotels = Hotel::all();
+        return view('admin.admin_viewhotel',compact('hotels'));
+
+
+    }//end method
+    public function AdminEditHotel($id){
+
+        $data = Hotel::find($id);
+
+        
+        return view('admin.admin_edithotel',compact('data'));
+
+
+     }//end method
+     public function AdminHotelStore(Request $request, $id){
+       
+        $data = Hotel::find($id);
+        $data->hotel_name = $request->hotel_name;
+        $data->price = $request->price;
+        $data->location = $request->location;
+        $data->country = $request->country;
+        $data->company = $request->company;
+        $data->region = $request->region;
+        $data->save();
+        $notification = array(
+         'message' => 'Car Information Updated Successfully',
+         'alert-type' => 'success'  
+        );
+        
+       
+        return redirect()->back()->with($notification);
+ 
+     }//end method
+
     public function AdminEditCar($id){
 
         $data = Car::find($id);
@@ -118,6 +154,19 @@ class AdminController extends Controller
 
     return redirect()->back()->with($notification);
     }
+
+    public function destroyHotel($id)
+    {
+    Hotel::destroy($id);
+
+    $notification = [
+        'message' => 'Hotel Information Deleted Successfully',
+        'alert-type' => 'success'
+    ];
+
+    return redirect()->back()->with($notification);
+    }
+
     public function AdminViewFlight(){
         $flights = Flight::all();
         return view('admin.admin_viewflight',compact('flights'));
@@ -215,6 +264,7 @@ class AdminController extends Controller
 
     return redirect()->back()->with($notification);
     }
+    
     
 }
 

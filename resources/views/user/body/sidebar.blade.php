@@ -31,7 +31,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="{{  route('user.view.hotel')  }}" class="nav-link">
               <i class="link-icon" data-feather="map"></i>
               <span class="link-title">Hotels</span>
             </a>

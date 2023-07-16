@@ -43,6 +43,12 @@
               <span class="link-title">View orders</span>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="{{  route('admin.view.hotel')  }}" class="nav-link">
+              <i class="link-icon" data-feather="list"></i>
+              <span class="link-title">View hotels</span>
+            </a>
+          </li>
           
           <li class="nav-item nav-category">Profile activity</li>
           <li class="nav-item">

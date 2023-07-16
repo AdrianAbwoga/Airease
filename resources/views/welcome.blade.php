@@ -159,7 +159,7 @@
                             </div>
                         </li>
                     </ul>
-                    <button class="btn btn-primary">More destination</button>
+                    
                 </div>
             </section>
             <section class="package" id="package">

@@ -20,6 +20,7 @@
                 <h6 class="mb-0 mt-3 text-end fw-normal mb-2"><span class="text-muted">Ordered Date :</span> {{ $orderPaid->created_at }}</h6>
                 
                 
+                
             </div>
         </div>
         <div class="container-fluid mt-5 d-flex justify-content-center w-100">
@@ -28,8 +29,7 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Brand</th>
-                            <th class="text-end">Number of days</th>
+                            <th>description</th>
                             <th class="text-end">Unit cost</th>
                             <th class="text-end">Total</th>
                         </tr>
@@ -38,7 +38,6 @@
                         <tr class="text-end">
                             <td class="text-start">1</td>
                             <td class="text-start">{{ $orderPaid->brand }}</td>
-                            <td>{{ $orderPaid->num_of_days }}</td>
                             <td>Ksh{{ $orderPaid->price }}</td>
                             <td>Ksh{{ $orderPaid->total_price }}</td>
                         </tr>
