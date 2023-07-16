@@ -74,9 +74,60 @@ class AdminController extends Controller
 
 
     }//end method
+    public function AdminViewCar(){
+        $cars = Car::all();
+        return view('admin.admin_viewcar',compact('cars'));
+
+
+    }//end method
+    public function AdminEditCar($id){
+
+        $data = Car::find($id);
+
+        
+        return view('admin.admin_editcar',compact('data'));
+
+
+     }//end method
+     public function AdminCarStore(Request $request, $id){
+       
+        $data = Car::find($id);
+        $data->brand = $request->brand;
+        $data->price = $request->price;
+        $data->body = $request->body;
+        $data->year = $request->year;
+        $data->model = $request->model;
+        $data->save();
+        $notification = array(
+         'message' => 'Car Information Updated Successfully',
+         'alert-type' => 'success'  
+        );
+        
+       
+        return redirect()->back()->with($notification);
+ 
+     }//end method
+     public function destroyCar($id)
+    {
+    Car::destroy($id);
+
+    $notification = [
+        'message' => 'Car Information Deleted Successfully',
+        'alert-type' => 'success'
+    ];
+
+    return redirect()->back()->with($notification);
+    }
     public function AdminViewFlight(){
         $flights = Flight::all();
         return view('admin.admin_viewflight',compact('flights'));
+
+
+    }//end method
+
+    public function AdminViewOrder(){
+        $ordersPaid = OrderPaid::all();
+        return view('admin.admin_vieworders',compact('ordersPaid'));
 
 
     }//end method

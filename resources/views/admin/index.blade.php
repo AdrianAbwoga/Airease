@@ -54,7 +54,7 @@
                 <div class="card">
                   <div class="card-body">
                     <div class="d-flex justify-content-between align-items-baseline">
-                      <h6 class="card-title mb-0">Flights</h6>
+                      <h6 class="card-title mb-0">Paid Orders</h6>
                       
                     </div>
                     <div class="row">
@@ -65,7 +65,7 @@
                         
                         <?php
                         $connection = mysqli_connect("localhost","root","","airease");
-                        $query = "SELECT id FROM flights";
+                        $query = "SELECT id FROM orders_paid";
                         $query_run = mysqli_query($connection, $query);
 
                         $row = mysqli_num_rows($query_run);
@@ -82,12 +82,19 @@
                 <div class="card">
                   <div class="card-body">
                     <div class="d-flex justify-content-between align-items-baseline">
-                      <h6 class="card-title mb-0">still deciding</h6>
+                      <h6 class="card-title mb-0">Available cars</h6>
                       
                     </div>
                     <div class="row">
                       <div class="col-6 col-md-12 col-xl-5">
-                        <h3 class="mb-2"><!--code for retrieving number of tickets sold--></h3>
+                        <h3 class="mb-2"><?php
+                        $connection = mysqli_connect("localhost","root","","airease");
+                        $query = "SELECT id FROM cars";
+                        $query_run = mysqli_query($connection, $query);
+
+                        $row = mysqli_num_rows($query_run);
+                        echo ''.$row.'';
+                        ?></h3>
                         
                       </div>
                       

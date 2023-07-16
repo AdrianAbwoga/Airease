@@ -31,6 +31,18 @@
               <span class="link-title">View Flights</span>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="{{  route('admin.view.car')  }}" class="nav-link">
+              <i class="link-icon" data-feather="truck"></i>
+              <span class="link-title">View Cars</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{  route('admin.view.order')  }}" class="nav-link">
+              <i class="link-icon" data-feather="list"></i>
+              <span class="link-title">View orders</span>
+            </a>
+          </li>
           
           <li class="nav-item nav-category">Profile activity</li>
           <li class="nav-item">

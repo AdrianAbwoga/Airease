@@ -35,6 +35,12 @@
     <input type="date" name="pickup_date" class="form-control" id="exampleInputUsername1" required>
 </div>
 
+<div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">order type</label>
+        <input type="text" name="order_type" class="form-control" id="exampleInputUsername1" autocomplete="off" value="{{ $data->order_type }}" readonly>
+    </div>
+
+
 
     <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Number of Days</label>

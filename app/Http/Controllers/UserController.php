@@ -132,6 +132,7 @@ public function UserStoreOrder(Request $request)
         'model' => 'required',
         'num_of_days' => 'required|integer|min:1',
         'pickup_date' => 'required|date',
+        'order_type' => 'required',
     ]);
 
     // Create a new order instance
@@ -143,6 +144,7 @@ public function UserStoreOrder(Request $request)
     $order->model = $validatedData['model'];
     $order->num_of_days = $validatedData['num_of_days'];
     $order->pickup_date = $validatedData['pickup_date'];
+    $order->order_type = $validatedData['order_type'];
     
 
     // Get the currently authenticated user

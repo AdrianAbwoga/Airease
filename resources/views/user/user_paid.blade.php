@@ -2,6 +2,7 @@
 @section('user')
 <div class="page-content">
     @foreach($ordersPaid as $orderPaid)
+    @if($orderPaid->user_id == auth()->user()->id)
     <div class="card-body">
         <div class="container-fluid d-flex justify-content-between">
             <div class="col-lg-3 ps-0">
@@ -17,6 +18,7 @@
                 <p class="text-end mb-1">AMOUNT PAID</p>
                 <h4 class="text-end fw-normal">Ksh{{ $orderPaid->total_price }}</h4>
                 <h6 class="mb-0 mt-3 text-end fw-normal mb-2"><span class="text-muted">Ordered Date :</span> {{ $orderPaid->created_at }}</h6>
+                
                 
             </div>
         </div>
@@ -64,6 +66,7 @@
         
 
     </div>
+    @endif
     @endforeach
 </div>
 @endsection

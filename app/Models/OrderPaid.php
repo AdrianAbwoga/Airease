@@ -12,6 +12,7 @@ class OrderPaid extends Model
         'brand',
         'price',
         'total_price',
+        'order_type',
     ];
 
     public function user()

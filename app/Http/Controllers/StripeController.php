@@ -26,6 +26,7 @@ class StripeController extends Controller
     $brand = $request->get('brand');
     $price = $request->get('price');
     $total_price = $request->get('total_price');
+    $order_type = $request->get('order_type');
 
     // Get the currently logged-in user
     $user = auth()->user();
@@ -54,11 +55,14 @@ class StripeController extends Controller
     $orderPaid->brand = $brand;
     $orderPaid->price = $price;
     $orderPaid->total_price = $total_price;
+    $orderPaid->order_type = $order_type;
 
     // Assign the user_id from the currently logged-in user
     $orderPaid->user_id = $user->id;
 
     $orderPaid->save();
+
+    Order::where('user_id', $user->id)->delete();
 
     return redirect()->away($session->url);
 }

@@ -88,13 +88,22 @@ Route::middleware(['auth','role:admin'])->group(function(){
 
     Route::get('/admin/view/user', [AdminController::class, 'AdminViewUser'])->name('admin.view.user');
 
+    Route::get('/admin/view/car', [AdminController::class, 'AdminViewCar'])->name('admin.view.car');
+
     Route::get('/admin/edit/user{id}', [AdminController::class, 'AdminEditUser'])->name('admin.edit.user');
+    Route::get('/admin/edit/car{id}', [AdminController::class, 'AdminEditCar'])->name('admin.edit.car');
 
     Route::post('/admin/user/{id}/store', [AdminController::class, 'AdminUserStore'])->name('admin.user.store');
 
     Route::delete('/admin/user/{id}', [AdminController::class, 'destroy'])->name('admin.user.destroy');
 
     Route::get('/admin/view/flight', [AdminController::class, 'AdminViewFlight'])->name('admin.view.flight');
+
+    Route::get('/admin/view/order', [AdminController::class, 'AdminViewOrder'])->name('admin.view.order');
+
+    Route::delete('/admin/car/{id}', [AdminController::class, 'destroyCar'])->name('admin.car.destroy');
+
+    Route::post('/admin/car/{id}/store', [AdminController::class, 'AdminCarStore'])->name('admin.car.store');
 
     
 

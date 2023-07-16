@@ -69,6 +69,8 @@
         <input type="hidden" name="num_of_days" value="{{ $order->num_of_days }}">
         <input type="hidden" name="price" value="{{ $order->price }}">
         <input type="hidden" name="total_price" value="{{ $order->total_price }}">
+        <input type="hidden" name="order_type" value="{{ $order->order_type }}">
+
         <button class="btn btn-success" type="submit" id="checkout-live-button">Pay</button>
     </form>
     <form method="POST" action="{{ route('user.order.destroy', ['order_id' => $order->order_id]) }}">
