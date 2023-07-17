@@ -61,19 +61,21 @@
         <input type="text" id="searchInput" class="form-control" placeholder="Search by country">
     </div>
 
-    <table class="table" id="hotelTable">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th data-column="country">Country</th>
-                <th data-column="price" class="asc">Price</th>
-                <th>Hotel name</th>
-                <th>region</th>
-                <th>location</th>
-                
-        </thead>
-        <tbody>
-            @foreach($hotels as $hotel)
+    <div class="table-responsive">
+        <table class="table" id="hotelTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th data-column="country">Country</th>
+                    <th data-column="price" class="asc">Price</th>
+                    <th>Hotel name</th>
+                    <th>Region</th>
+                    <th>Location</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($hotels as $hotel)
                 <tr>
                     <td>{{ $hotel->id }}</td>
                     <td data-column="country">{{ $hotel->country }}</td>
@@ -85,8 +87,9 @@
                         <a href="{{ route('user.edit.hotel', ['id' => $hotel->id]) }}" type="button" class="btn btn-success">Order</a>
                     </td>
                 </tr>
-            @endforeach
-        </tbody>
-    </table>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
 </div>
 @endsection

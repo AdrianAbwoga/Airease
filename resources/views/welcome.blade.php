@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
     <!-- favicon -->
-    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="{{ asset('logo/mainlogo.png') }}" type="image/svg+xml">
     <!-- custom css link -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <script src="{{ asset('js/script.js') }}"></script>
@@ -24,7 +24,7 @@
             <div class="container">
                 <a href="" class="helpline-box"></a>
                 <a href="#" class="logo">
-                    <img src="{{ asset('logo/mainlogo.png') }}" alt="Airease logo">
+                    <img src="" alt="">
                 </a>
                 <div class="header-btn-group">
                     @if (Route::has('login'))
@@ -55,6 +55,7 @@
                             <ion-icon name="close-outline"></ion-icon>
                         </button>
                     </div>
+                    
                     <ul class="navbar-list">
                         <li>
                             <a href="#home" class="navbar-link" data-nav-link>Home</a>
