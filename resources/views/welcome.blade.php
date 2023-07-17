@@ -84,11 +84,7 @@
             <section class="hero" id="home">
                 <div class="container">
                     <h2 class="h1 hero-title">Journey to explore the world</h2>
-                    <p class="hero-text">
-                        Ac mi duis mollis. Sapiente? Scelerisque quae, penatibus? Suscipit class corporis nostra rem quos
-                        voluptatibus habitant?
-                        Fames, vivamus minim nemo enim, gravida lobortis quasi, eum.
-                    </p>
+                    
                     <div class="btn-group">
                         
                         <button class="btn btn-primary" onclick="window.location.href='{{ route('login') }}'">Book Now</button>
@@ -99,11 +95,7 @@
                 <div class="container">
                     <p class="section-subtitle">Where To Go</p>
                     <h2 class="h2 section-title">Popular destination</h2>
-                    <p class="section-text">
-                        Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum. Vestibulum cumque
-                        laudantium.
-                        Sit ornare mollitia tenetur, aptent.
-                    </p>
+                    
                     <ul class="popular-list">
                         <li>
                             <div class="popular-card">
@@ -117,9 +109,7 @@
                                     <h3 class="h3 card-title">
                                         <a href="#">Diani Beach</a>
                                     </h3>
-                                    <p class="card-text">
-                                        Fusce hic augue velit wisi ips quibusdam pariatur, iusto.
-                                    </p>
+                                    
                                 </div>
                             </div>
                         </li>
@@ -135,9 +125,7 @@
                                     <h3 class="h3 card-title">
                                         <a href="#">Pyramids of Giza</a>
                                     </h3>
-                                    <p class="card-text">
-                                        Fusce hic augue velit wisi ips quibusdam pariatur, iusto.
-                                    </p>
+                                    
                                 </div>
                             </div>
                         </li>
@@ -153,9 +141,7 @@
                                     <h3 class="h3 card-title">
                                         <a href="#">Table Mountain</a>
                                     </h3>
-                                    <p class="card-text">
-                                        Fusce hic augue velit wisi ips quibusdam pariatur, iusto.
-                                    </p>
+                                   
                                 </div>
                             </div>
                         </li>
@@ -167,11 +153,7 @@
                 <div class="container">
                     <p class="section-subtitle">Popular Airlines</p>
                     <h2 class="h2 section-title">Choose your Flight</h2>
-                    <p class="section-text">
-                        Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum. Vestibulum cumque
-                        laudantium.
-                        Sit ornare mollitia tenetur, aptent.
-                    </p>
+                  
                     <ul class="package-list">
                         <li>
                             <div class="package-card">
@@ -180,11 +162,7 @@
                                 </figure>
                                 <div class="card-content">
                                     <h3 class="h3 card-title">The Kenya Airways Experience</h3>
-                                    <p class="card-text">
-                                        Laoreet, voluptatum nihil dolor esse quaerat mattis explicabo maiores, est aliquet
-                                        porttitor! Eaque,
-                                        cras, aspernatur.
-                                    </p>
+                                   
                                     <ul class="card-meta-list">
                                         <li class="card-meta-item">
                                             <div class="meta-box">
@@ -222,11 +200,7 @@
                                 </figure>
                                 <div class="card-content">
                                     <h3 class="h3 card-title">A trip with Rwandair</h3>
-                                    <p class="card-text">
-                                        Laoreet, voluptatum nihil dolor esse quaerat mattis explicabo maiores, est aliquet
-                                        porttitor! Eaque,
-                                        cras, aspernatur.
-                                    </p>
+                                   
                                     <ul class="card-meta-list">
                                         <li class="card-meta-item">
                                             <div class="meta-box">
@@ -264,11 +238,7 @@
                                 </figure>
                                 <div class="card-content">
                                     <h3 class="h3 card-title">What the South African Airways will offer</h3>
-                                    <p class="card-text">
-                                        Laoreet, voluptatum nihil dolor esse quaerat mattis explicabo maiores, est aliquet
-                                        porttitor! Eaque,
-                                        cras, aspernatur.
-                                    </p>
+                                    
                                     <ul class="card-meta-list">
                                         <li class="card-meta-item">
                                             <div class="meta-box">
@@ -307,11 +277,7 @@
                 <div class="container">
                     <p class="section-subtitle">What More</p>
                     <h2 class="h2 section-title">Plan Your Travel</h2>
-                    <p class="section-text">
-                        Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum. Vestibulum cumque
-                        laudantium.
-                        Sit ornare mollitia tenetur, aptent.
-                    </p>
+                    
                     <div class="horizontal-container">
                         <div class="box">
                             <img src="{{ asset('images/BMW-2-Series-Gran-Coupe-271220221147.jpg') }}" alt="Car Image">
@@ -336,11 +302,7 @@
                     <div class="cta-content">
                         <p class="section-subtitle">What's Up</p>
                         <h2 class="h2 section-title">Ready For Unforgettable Travel. Remember Us!</h2>
-                        <p class="section-text">
-                            Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum. Vestibulum cumque
-                            laudantium. Sit ornare
-                            mollitia tenetur, aptent.
-                        </p>
+                        
                     </div>
                     
                 </div>
@@ -354,11 +316,7 @@
                     <a href="#" class="logo">
                         <img src="{{ asset('images/logoblue.svg') }}" alt="Airease logo">
                     </a>
-                    <p class="footer-text">
-                        Urna ratione ante harum provident, eleifend, vulputate molestiae proin fringilla, praesentium magna conubia
-                        at
-                        perferendis, pretium, aenean aut ultrices numquam.
-                    </p>
+                   
                 </div>
                 <div class="footer-contact">
                     <h3 class="footer-heading">Contact Us</h3>

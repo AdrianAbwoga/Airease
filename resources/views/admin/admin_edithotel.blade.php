@@ -4,7 +4,7 @@
 <div class="page-content">
 
     
-<h6 class="card-title">UPDATE Car Information</h6>
+<h6 class="card-title">UPDATE Hotel Information</h6>
 
 
 <form method ="POST" action="{{ route('admin.hotel.store',['id' => $data->id]) }}"class="forms-sample" enctype="multipart/form-data">

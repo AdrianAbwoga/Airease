@@ -107,7 +107,7 @@ class AdminController extends Controller
         $data->region = $request->region;
         $data->save();
         $notification = array(
-         'message' => 'Car Information Updated Successfully',
+         'message' => 'Hotel Information Updated Successfully',
          'alert-type' => 'success'  
         );
         

@@ -1,4 +1,5 @@
 @extends('user.user_dashboard')
+
 @section('user')
 <div class="page-content">
     @foreach($ordersPaid as $orderPaid)
@@ -18,9 +19,6 @@
                 <p class="text-end mb-1">AMOUNT PAID</p>
                 <h4 class="text-end fw-normal">Ksh{{ $orderPaid->total_price }}</h4>
                 <h6 class="mb-0 mt-3 text-end fw-normal mb-2"><span class="text-muted">Ordered Date :</span> {{ $orderPaid->created_at }}</h6>
-                
-                
-                
             </div>
         </div>
         <div class="container-fluid mt-5 d-flex justify-content-center w-100">
@@ -63,9 +61,26 @@
             </div>
         </div>
         
+        <!-- Add the print button -->
+        <div class="text-center mt-5">
+            <button id="printButton" type="button" class="btn btn-outline-primary btn-icon-text me-2 mb-2 mb-md-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-printer btn-icon-prepend">
+                    <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                    <rect x="6" y="14" width="12" height="8"></rect>
+                </svg>
+                Print
+            </button>
+        </div>
 
     </div>
     @endif
     @endforeach
 </div>
+
+<script>
+    document.getElementById("printButton").addEventListener("click", function() {
+        window.print();
+    });
+</script>
 @endsection
