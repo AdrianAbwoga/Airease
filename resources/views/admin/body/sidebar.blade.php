@@ -31,12 +31,7 @@
               <span class="link-title">View Users</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="{{  route('admin.view.flight')  }}" class="nav-link">
-              <i class="link-icon" data-feather="navigation"></i>
-              <span class="link-title">View Flights</span>
-            </a>
-          </li>
+         
           <li class="nav-item">
             <a href="{{  route('admin.view.car')  }}" class="nav-link">
               <i class="link-icon" data-feather="truck"></i>

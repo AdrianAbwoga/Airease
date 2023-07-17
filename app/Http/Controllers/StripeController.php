@@ -32,6 +32,7 @@ class StripeController extends Controller
         $price = $request->get('price');
         $total_price = $request->get('total_price');
         $order_type = $request->get('order_type');
+        $airline = $request->get('airline');
 
         // Get the currently logged-in user
         $user = auth()->user();
@@ -52,10 +53,10 @@ class StripeController extends Controller
                 [
                     'price_data' => [
                         'currency' => 'kes',
-                        'unit_amount' => (int) ($total_price * 100),
                         'product_data' => [
                             'name' => $brand,
                         ],
+                        'unit_amount' => (int) ($total_price * 100),
                     ],
                     'quantity' => 1,
                 ],
@@ -73,6 +74,7 @@ class StripeController extends Controller
         $orderPaid->order_type = $order_type;
         $orderPaid->hotel_name = $hotel_name;
         $orderPaid->end_date = $end_date;
+        $orderPaid->airline = $airline;
 
         // Assign the user_id from the currently logged-in user
         $orderPaid->user_id = $user->id;

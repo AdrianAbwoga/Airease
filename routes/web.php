@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FlightSearchController;
+use App\Http\Controllers\FlightController;
 use App\Http\Controllers\StripeController;
 use App\Models\User;
 use App\Models\Receipt;
@@ -69,6 +70,8 @@ Route::middleware(['auth','role:user'])->group(function(){
 
     Route::post('/user/store/{id}/order', [UserController::class, 'UserStoreOrder'])->name('user.store.order');
 
+    Route::post('/user/store/flight', [UserController::class, 'UserStoreflight'])->name('user.store.flight');
+
     Route::get('/user/receipt', [UserController::class, 'UserReceipt'])->name('user.receipt');
 
     Route::delete('/user/order/{order_id}', [UserController::class, 'destroy'])->name('user.order.destroy');
@@ -77,8 +80,11 @@ Route::middleware(['auth','role:user'])->group(function(){
 
     Route::get('/user/edit/hotel/{id}', [UserController::class, 'UserEditHotel'])->name('user.edit.hotel');
     
+    Route::post('/user/flights/search', [UserController::class, 'searchFlights'])->name('user.flights.search');
 
+    Route::get('user/flights/search', [UserController::class, 'showFlightSearchForm'])->name('user.flights.searchForm');
 
+   
 });
 
 
@@ -143,6 +149,9 @@ Route::get('/user/receipt', [StripeController::class, 'UserReceipt'])->name('use
 Route::post('/user/paid', [StripeController::class, 'UserPaid'])->name('user.user_paid');
 
 }); //prevent back  middleware
+
+
+
 
 
 

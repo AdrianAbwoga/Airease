@@ -52,11 +52,14 @@
                         <tr class="text-end">
                             <td class="text-start">1</td>
                             <td class="text-start">
-    @if($order->brand)
-        {{ $order->brand }}
-    @elseif($order->hotel_name)
-        {{ $order->hotel_name }}
-    @endif
+                            @if ($order->brand)
+    {{ $order->brand }}
+@elseif ($order->hotel_name)
+    {{ $order->hotel_name }}
+@elseif ($order->airline)
+    {{ $order->airline }}
+@endif
+
 </td>
 
                             <td>{{ $order->num_of_days }}</td>
@@ -87,7 +90,8 @@
         <div class="d-flex justify-content-start">
         <form action="{{ route('session', ['order' => $order->order_id]) }}" method="POST">
         @csrf
-        <input type="hidden" name="brand" value="{{ $order->brand ? $order->brand : $order->hotel_name }}">
+        <input type="hidden" name="brand" value="{{ $order->brand ? $order->brand : ($order->airline ? $order->airline : $order->hotel_name) }}">
+
 
         <input type="hidden" name="num_of_days" value="{{ $order->num_of_days }}">
         <input type="hidden" name="price" value="{{ $order->price }}">

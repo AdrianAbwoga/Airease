@@ -27,7 +27,7 @@
                     <div class="col-md-4 stretch-card grid-margin grid-margin-md-0">
                       <div class="card">
                         <div class="card-body">
-                        <a href="">
+                        <a href="{{  route('user.flights.search') }}">
                           <h4 class="text-center mt-3 mb-4">Flights</h4>
                         </a>
 

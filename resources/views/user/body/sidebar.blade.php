@@ -19,7 +19,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{  route('search')  }}" class="nav-link">
+            <a href="{{  route('user.flights.search') }}" class="nav-link">
               <i class="link-icon" data-feather="navigation"></i>
               <span class="link-title">Flights</span>
             </a>

@@ -11,12 +11,18 @@ use App\Models\Order;
 use App\Models\OrderPaid;
 use App\Models\Receipt;
 use App\Models\Hotel;
+use GuzzleHttp\Client;
 
 
 class UserController extends Controller
 {
     public function UserDashboard(){
         return view('user.index');
+
+    }//end method
+
+    public function UserFlightsSearch(){
+        return view('user.user_flight-search');
 
     }//end method
 
@@ -139,6 +145,32 @@ class UserController extends Controller
     
     
      }//end method
+     public function UserStoreFlight(Request $request)
+{
+    $flightNumber = $request->input('flight_number');
+    $airline = $request->input('airline');
+    $departure = $request->input('departure');
+    $arrival = $request->input('arrival');
+    $price = $request->input('price');
+    
+    $user_id = Auth::id();
+
+    // Create a new order instance
+    $order = new Order();
+    $order->flight_number = $flightNumber;
+    $order->airline = $airline;
+    $order->departure = $departure;
+    $order->arrival = $arrival;
+    $order->price = $price;
+
+    $order->user_id = $user_id;
+
+    // Save the order to the database
+    $order->save();
+
+    // Redirect or return a response as needed
+    return redirect()->route('user.user_receipt')->with('success', 'Order placed successfully.');
+}
      public function UserStoreOrder(Request $request)
      {
         $validatedData = $request->validate([
@@ -264,6 +296,30 @@ class UserController extends Controller
         ->with('ordersPaid', $ordersPaid);
 
     }//end method
+    public function searchFlights(Request $request)
+    {
+        $accessKey = '1c69867d3f54c5cf05a2f79404d5ecea';
+        $departure = $request->input('departure');
+        $arrival = $request->input('arrival');
+
+        $client = new Client();
+        $response = $client->request('GET', 'http://api.aviationstack.com/v1/flights', [
+            'query' => [
+                'access_key' => $accessKey,
+                'dep_iata' => $departure,
+                'arr_iata' => $arrival,
+            ],
+        ]);
+
+        $flightData = json_decode($response->getBody(), true);
+
+        // Process the flight data and return the view with flight data
+        return view('user.user_flight-search')->with('flightData', $flightData['data']);
+    }
+    public function showFlightSearchForm()
+{
+    return view('user.user_flight-search');
+}
 
 
 }
