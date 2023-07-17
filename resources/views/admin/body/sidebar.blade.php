@@ -18,10 +18,16 @@
               <span class="link-title">Dashboard</span>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="http://localhost/phpmyadmin/index.php?route=/database/structure&db=airease" class="nav-link">
+              <i class="link-icon" data-feather="database"></i>
+              <span class="link-title">Database</span>
+            </a>
+          </li>
           <li class="nav-item nav-category">Tracking Action</li>
           <li class="nav-item">
             <a href="{{  route('admin.view.user')  }}" class="nav-link">
-              <i class="link-icon" data-feather="list"></i>
+              <i class="link-icon" data-feather="user-plus"></i>
               <span class="link-title">View Users</span>
             </a>
           </li>
@@ -39,13 +45,13 @@
           </li>
           <li class="nav-item">
             <a href="{{  route('admin.view.order')  }}" class="nav-link">
-              <i class="link-icon" data-feather="list"></i>
+              <i class="link-icon" data-feather="tag"></i>
               <span class="link-title">View orders</span>
             </a>
           </li>
           <li class="nav-item">
             <a href="{{  route('admin.view.hotel')  }}" class="nav-link">
-              <i class="link-icon" data-feather="list"></i>
+              <i class="link-icon" data-feather="map-pin"></i>
               <span class="link-title">View hotels</span>
             </a>
           </li>
@@ -59,7 +65,7 @@
           </li>
           <li class="nav-item">
             <a href="{{ route ('admin.change.password') }}" class="nav-link">
-              <i class="link-icon" data-feather="edit"></i>
+              <i class="link-icon" data-feather="key"></i>
               <span class="link-title">Change Password</span>
             </a>
           </li>

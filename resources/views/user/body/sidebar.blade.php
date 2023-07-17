@@ -14,7 +14,7 @@
           <li class="nav-item nav-category">Main</li>
           <li class="nav-item">
             <a href="{{  route('user.dashboard')  }}" class="nav-link">
-              <i class="link-icon" data-feather="box"></i>
+              <i class="link-icon" data-feather="home"></i>
               <span class="link-title">Home</span>
             </a>
           </li>
@@ -32,7 +32,7 @@
           </li>
           <li class="nav-item">
             <a href="{{  route('user.view.hotel')  }}" class="nav-link">
-              <i class="link-icon" data-feather="map"></i>
+              <i class="link-icon" data-feather="map-pin"></i>
               <span class="link-title">Hotels</span>
             </a>
           </li>
@@ -64,7 +64,7 @@
           </li>
           <li class="nav-item">
             <a href="{{ route ('user.change.password') }}" class="nav-link">
-              <i class="link-icon" data-feather="edit"></i>
+              <i class="link-icon" data-feather="key"></i>
               <span class="link-title">Change Password</span>
             </a>
           </li>
