@@ -24,6 +24,8 @@ use App\Models\Car;
 */
 Route::group(['middleware' => 'prevent-back-history'],function(){
 
+require __DIR__.'/auth.php';
+
 Route::match(['get', 'post'], '/search', [FlightSearchController::class, 'processSearchForm'])->name('search');
 
 Route::get('/results', [FlightController::class, 'showResults'])->name('results');
@@ -33,9 +35,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/user/dashboard', function () {
-    return view('user.dashboard');
-})->middleware(['auth', 'verified'])->name('user.dashboard');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -43,11 +43,15 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+
 
 Route::middleware(['auth','role:user'])->group(function(){
 
-    Route::get('/user/dashboard', [UserController::class, 'UserDashboard'])->name('user.dashboard');
+    Route::get('/user/dashboard', [UserController::class, 'UserDashboard'])
+    ->middleware(['auth', 'verified'])
+    ->name('user.dashboard')
+    ->middleware('verified');
+
 
     Route::get('/user/logout', [UserController::class, 'UserLogout'])->name('user.logout');
 
