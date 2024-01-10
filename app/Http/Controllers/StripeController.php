@@ -25,7 +25,7 @@ class StripeController extends Controller
 
     public function session(Request $request)
     {
-        \Stripe\Stripe::setApiKey(config('stripe.sk'));
+        \Stripe\Stripe::setApiKey('sk_test_51NU1ulJobbXtcIizziGUBgCkSX5TjaTt3pt5d0ioqK9JOedxIIF051XMEDzgwbNDz2cVIcdRC3Ti0ZqFJ7NHa023005o2v2rTd');
         
         $brand = $request->get('brand');
         $hotel_name = $request->get('hotel_name');
