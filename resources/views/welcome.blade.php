@@ -323,15 +323,15 @@
                     <ul class="contact-list">
                         <li>
                             <ion-icon name="location-outline"></ion-icon>
-                            <p class="text">123 Street, City, Country</p>
+                            <p class="text">Strathmore University Madaraka, Nairobi, Kenya</p>
                         </li>
                         <li>
                             <ion-icon name="call-outline"></ion-icon>
-                            <p class="text">+123 456 789</p>
+                            <p class="text">+254705437676</p>
                         </li>
                         <li>
                             <ion-icon name="mail-outline"></ion-icon>
-                            <p class="text">info@example.com</p>
+                            <p class="text">airease777@gmail.com</p>
                         </li>
                     </ul>
                 </div>
