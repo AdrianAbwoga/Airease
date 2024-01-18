@@ -137,7 +137,11 @@ Route::middleware(['auth','role:admin'])->group(function(){
 
 });//End group admin middleware
 
+Route::get(url'/testroute' , function(){
+    $name = "funny coder";
 
+    Mail::to(users:'airease@gmail.com')->send(new MyTestEmail($name)); 
+})
 
 
 
